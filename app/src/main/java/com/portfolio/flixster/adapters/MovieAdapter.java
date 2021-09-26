@@ -21,6 +21,7 @@ import com.portfolio.flixster.R;
 import com.portfolio.flixster.models.Movie;
 
 import org.jetbrains.annotations.NotNull;
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -87,7 +88,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                 public void onClick(View v) {
 
                     Intent i = new Intent(context, DetailActivity.class);
-                    i.putExtra("title",movie.getTitle());
+                //    i.putExtra("title",movie.getTitle());
+                    i.putExtra("movie", Parcels.wrap(movie));
                     context.startActivity(i);
                 }
             });
